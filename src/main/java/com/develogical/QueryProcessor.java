@@ -1,8 +1,11 @@
 package com.develogical;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 public class QueryProcessor {
 
-    public String process(String query) {
+    public String process(String query) throws UnsupportedEncodingException {
         if (query.toLowerCase().contains("shakespeare")) {
             return "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
                     "English poet, playwright, and actor, widely regarded as the greatest " +
@@ -16,17 +19,10 @@ public class QueryProcessor {
                     "algorithm and computation with the Turing machine, which can be " +
                     "considered a model of a general-purpose computer.";
         } else if (query.toLowerCase().contains("plus")) {
-            query = query.replaceAll("\\D+","_");
-            String[] numbers = query.split("_");
-            int result = 0;
-            for (String number : numbers) {
-                try {
-                    int num = Integer.parseInt(number);
-                    result += num;
-                } catch (NumberFormatException e) {
-                    //do nothing
-                }
-            }
+            //query = query.replaceAll("\\D+","_");
+            String replacedQuery = query.replaceAll("%20", "_");
+            String[] numbers = replacedQuery.split("_");
+            int result = Integer.parseInt(numbers[3]) + Integer.parseInt(numbers[5]);
             return Integer.toString(result);
         } else if (query.toLowerCase().contains("what is your name")) {
             return "teamNameHere";

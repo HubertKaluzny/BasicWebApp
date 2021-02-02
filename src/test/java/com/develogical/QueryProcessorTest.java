@@ -32,6 +32,6 @@ public class QueryProcessorTest {
 
     @Test
     public void canAdd() throws Exception {
-        assertThat(queryProcessor.process("206 plus 7"), containsString("213"));
+        assertThat(queryProcessor.process("%20what%20is%2017%20plus%2016"), is("33"));
     }
 }
