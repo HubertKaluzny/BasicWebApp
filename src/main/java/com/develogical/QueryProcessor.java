@@ -49,6 +49,11 @@ public class QueryProcessor {
             return Integer.toString(a * b);
         } else if (query.toLowerCase().contains("who played james bond in the film dr no")) {
             return "Sean Connery";
+        } else if (query.toLowerCase().contains("theresa may")) {
+            return "2016"; 
+        }
+        else if (query.toLowerCase().contains("banana")) {
+            return "yellow";
         }
         return "";
     }
