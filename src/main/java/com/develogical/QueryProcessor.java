@@ -41,6 +41,12 @@ public class QueryProcessor {
                 }
             }
             return Integer.toString(largest);
+        } else if (query.toLowerCase().contains("multiplied")) {
+            query = query.replaceAll("\\D+", "_");
+            String[] numbers = query.split("_");
+            int a = Integer.parseInt(numbers[1]);
+            int b = Integer.parseInt(numbers[2]);
+            return Integer.toString(a * b);
         }
         return "";
     }
