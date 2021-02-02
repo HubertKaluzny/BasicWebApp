@@ -47,9 +47,23 @@ public class QueryProcessor {
             int a = Integer.parseInt(numbers[1]);
             int b = Integer.parseInt(numbers[2]);
             return Integer.toString(a * b);
-        }
-        else if (query.toLowerCase().contains("banana")) {
+        } else if (query.toLowerCase().contains("banana")) {
             return "yellow";
+        } else if (query.toLowerCase().contains("primes")) {
+            String replacedQuery = query.replaceAll("%20", "_");
+            String[] numbers = replacedQuery.split("_");
+            System.out.println(numbers[9]);
+            int num1 = Integer.parseInt(numbers[8].substring(0, numbers[8].length() - 1));
+            int num2 = Integer.parseInt(numbers[9]);
+            int num = 0;
+            if (num1 == 2) {
+                num = num1;
+            } else if (num1%2==0) {
+                num = num2;
+            } else {
+                num = num1;
+            }
+            return Integer.toString(num);
         }
         return "";
     }
