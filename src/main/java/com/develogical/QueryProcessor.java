@@ -23,7 +23,24 @@ public class QueryProcessor {
             return Integer.toString(result);
         } else if (query.toLowerCase().contains("what is your name")) {
             return "teamNameHere";
-        }
+        } else if (query.toLowerCase().contains("following is the largest")) {
+            String[] parts = query.split(","); 
+            int num1 = Integer.parseInt(parts[0]); 
+            int num2 = Integer.parseInt(parts[1]); 
+            int num3 = Integer.parseInt(parts[2]); 
+            
+            int result;
+
+            if (num1 > num2 && num1 > num3) {
+                result = num1; 
+            } else if (num2 > num3) {
+                result = num2; 
+            } else { 
+                result = num3; 
+            }
+
+            return Integer.toString(result); 
+        } 
         return "";
     }
 }
