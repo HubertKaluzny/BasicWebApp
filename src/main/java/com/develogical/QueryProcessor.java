@@ -16,9 +16,9 @@ public class QueryProcessor {
                     "algorithm and computation with the Turing machine, which can be " +
                     "considered a model of a general-purpose computer.";
         } else if (query.toLowerCase().contains("plus")) {
-            String[] nums = query.split("plus");
+            String[] nums = query.split(" plus ");
             int num1=Integer.parseInt(nums[0]);
-            int num2=Integer.parseInt(nums[0]);
+            int num2=Integer.parseInt(nums[1]);
             int result = num1 + num2;
             return Integer.toString(result);
         } else if (query.toLowerCase().contains("what is your name")) {

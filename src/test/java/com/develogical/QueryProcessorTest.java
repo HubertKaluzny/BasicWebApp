@@ -29,4 +29,9 @@ public class QueryProcessorTest {
     public void knowsAboutTuring() throws Exception {
         assertThat(queryProcessor.process("Turing"), containsString("computer scientist"));
     }
+
+    @Test
+    public void canAdd() throws Exception {
+        assertThat(queryProcessor.process("206 plus 7"), containsString("213"));
+    }
 }
