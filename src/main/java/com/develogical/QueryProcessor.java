@@ -47,6 +47,8 @@ public class QueryProcessor {
             int a = Integer.parseInt(numbers[1]);
             int b = Integer.parseInt(numbers[2]);
             return Integer.toString(a * b);
+        } else if (query.toLowerCase().contains("who played james bond in the film dr no")) {
+            return "Sean Connery";
         }
         return "";
     }
