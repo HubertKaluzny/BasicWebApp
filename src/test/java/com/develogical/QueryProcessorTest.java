@@ -40,4 +40,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("%20which%20of%20the%20following%20numbers%20are%20primes:%202,%20323"), is("2"));
     }
 
+    @Test
+    public void canSubtract() throws Exception {
+        assertThat(queryProcessor.process("%20what%20is%2017%20minus%2016"), is("1"));
+    }
+
 }
