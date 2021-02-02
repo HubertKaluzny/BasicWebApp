@@ -47,7 +47,12 @@ public class QueryProcessor {
             int a = Integer.parseInt(numbers[1]);
             int b = Integer.parseInt(numbers[2]);
             return Integer.toString(a * b);
-        } else if (query.toLowerCase().contains("banana")) {
+        } else if (query.toLowerCase().contains("who played james bond in the film dr no")) {
+            return "Sean Connery";
+        } else if (query.toLowerCase().contains("theresa may")) {
+            return "2016"; 
+        }
+        else if (query.toLowerCase().contains("banana")) {
             return "yellow";
         } else if (query.toLowerCase().contains("primes")) {
             String replacedQuery = query.replaceAll("%20", "_");
