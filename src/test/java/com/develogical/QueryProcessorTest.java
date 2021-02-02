@@ -32,7 +32,7 @@ public class QueryProcessorTest {
 
     @Test
     public void canAdd() throws Exception {
-        assertThat(queryProcessor.process("%20what%20is%2017%20plus%2016"), is("33"));
+        assertThat(queryProcessor.process("%20which%20of%20the%20following%20numbers%20are%20primes:%20541,%20170"), is("33"));
     }
 
     @Test

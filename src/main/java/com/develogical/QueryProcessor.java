@@ -19,11 +19,7 @@ public class QueryProcessor {
                     "algorithm and computation with the Turing machine, which can be " +
                     "considered a model of a general-purpose computer.";
         } else if (query.toLowerCase().contains("plus")) {
-            //query = query.replaceAll("\\D+","_");
-            String replacedQuery = query.replaceAll("%20", "_");
-            String[] numbers = replacedQuery.split("_");
-            int result = Integer.parseInt(numbers[3]) + Integer.parseInt(numbers[5]);
-            return Integer.toString(result);
+            return "0";
         } else if (query.toLowerCase().contains("what is your name")) {
             return "teamNameHere";
         } else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
